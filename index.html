@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video Player</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/4.0.1/mocha.css">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/4.0.1/mocha.js"></script>
+    <script>
+        mocha.setup('bdd');
+    </script>
+    <script src="http://chaijs.com/chai.js"></script>
+    <script>
+        let assert = chai.assert;
+    </script>
+    <script src="main.js" type="text/javascript"></script>
+    <script src="test.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="player-container">
+        <div class="player-video">
+            <video width="640" height="360" poster="images/poster.jpg">
+                <source src="big_buck_bunny.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="player-controls">
+            <div class="play-controls">
+                <img src="images/play.png" alt="Play" class="play-button">
+                <img src="images/pause.png" alt="Pause" class="pause-button">
+            </div>
+            <div class="timer">
+                <span class="current-time">00:00 </span>/
+                <span class="duration">01:00</span></div>
+            <div class="progress-bar">
+                <div class="buffered">
+                    <div class="current"></div>
+                </div>
+            </div>
+            <div class="sound-controls">
+                <img src="images/sound.png" alt="Sound" class="sound-button">
+                <img src="images/mute.png" alt="Mute" class="mute-button">
+            </div>
+        </div>
+    </div>
+    <div id="mocha">Test Results</div>
+    <script>
+        mocha.run();
+    </script>
+</body>
+</html>
